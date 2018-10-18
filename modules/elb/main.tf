@@ -65,8 +65,8 @@ resource "aws_route53_record" "www" {
   type    = "A"
 
   alias {
-    name                   = "${aws_elb.cosmos-NSOT.dns_name}"
-    zone_id                = "${aws_elb.cosmos-NSOT.zone_id}"
+    name                   = "${aws_elb.NSOT.dns_name}"
+    zone_id                = "${aws_elb.NSOT.zone_id}"
     evaluate_target_health = true
   }
 }
