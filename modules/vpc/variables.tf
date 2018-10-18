@@ -94,15 +94,11 @@ variable "amis" {
   }
 }
 #The variables below are used for tagging all of the resources within this module.
-variable "cost_centre" {
-  default = ""
-}
+
 variable "responsible-group-email" {
   default = ""
 }
-variable "owner_individual" {
-  default = ""
-}
+
 variable "environment" {
   default = ""
 }
