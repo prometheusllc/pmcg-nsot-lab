@@ -3,7 +3,7 @@ resource "random_id" "sshkey2" {
 }
 
 resource "aws_security_group" "cosmos-NSOT_ELB" {
-    name = "cosmos-nsot-sg-${random_id.sshkey2.hex}"
+    name = "nsot-sg-${random_id.sshkey2.hex}"
     description = "Allow incoming traffic"
 
     ingress {
@@ -23,18 +23,18 @@ resource "aws_security_group" "cosmos-NSOT_ELB" {
     vpc_id = "${var.vpc_id}"
 
     tags {
-        Name = "cosmos-nsot-SG"
-        environment = "cosmos-test"
+        Name = "nsot-SG"
+        environment = "nsot test"
     }
 }
 
 
 # Create a new load balancer
-resource "aws_elb" "cosmos-NSOT" {
+resource "aws_elb" "NSOT" {
  
-name  = "cosmos-NSOT-prod-elb" 
+name  = "NSOT-prod-elb" 
  subnets = ["${var.public_subnet}","${var.public_subnet2}"]
- security_groups = ["${aws_security_group.cosmos-NSOT_ELB.id}"]
+ security_groups = ["${aws_security_group.NSOT_ELB.id}"]
   cross_zone_load_balancing  = true
   idle_timeout = 400
   connection_draining = true
@@ -55,12 +55,12 @@ name  = "cosmos-NSOT-prod-elb"
   }
 
   tags {
-    Name = "cosmos-nsot-elb-tf"
+    Name = "nsot-elb-tf"
   }
 }
-
+/*
 resource "aws_route53_record" "www" {
-  zone_id = "ZJUW1FLH7BIEB"
+  zone_id = ""
   name    = "${var.DNS}"
   type    = "A"
 
@@ -70,5 +70,5 @@ resource "aws_route53_record" "www" {
     evaluate_target_health = true
   }
 }
-
+*/
 
