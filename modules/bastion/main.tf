@@ -8,7 +8,7 @@ resource "random_id" "sshkey" {
   byte_length = 8
 }
 
-resource "aws_security_group" "cosmos-NSOT_region1" {
+resource "aws_security_group" "NSOT_region1" {
     description = "Allow incoming traffic"
 
     ingress {
@@ -57,8 +57,8 @@ resource "aws_security_group" "cosmos-NSOT_region1" {
 }
 /*
 resource "aws_key_pair" "cosmos-admin" {
-  key_name = "cosmos-admin-${random_id.sshkey.hex}"
-  public_key = "~/.ssh.cosmos-admin.pub" #"${file("${var.PATH_TO_PUBLIC_KEY}")}"
+  key_name = "nsot-admin-${random_id.sshkey.hex}"
+  public_key = "~/.ssh.nsot-admin.pub" #"${file("${var.PATH_TO_PUBLIC_KEY}")}"
 }
 */
 resource "aws_launch_configuration" "bastion" {
@@ -67,7 +67,7 @@ resource "aws_launch_configuration" "bastion" {
   instance_type               = "t2.micro"
   associate_public_ip_address = true
   key_name                    = "${var.keyname}"
-  security_groups             = ["${aws_security_group.cosmos-NSOT_region1.id}"]
+  security_groups             = ["${aws_security_group.nsot-NSOT_region1.id}"]
   user_data                   = "${data.template_file.init.rendered}"
   placement_tenancy           = "default"
 
