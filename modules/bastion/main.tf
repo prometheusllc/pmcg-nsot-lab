@@ -56,7 +56,7 @@ resource "aws_security_group" "NSOT_region1" {
     
 }
 /*
-resource "aws_key_pair" "cosmos-admin" {
+resource "aws_key_pair" "nsot-admin" {
   key_name = "nsot-admin-${random_id.sshkey.hex}"
   public_key = "~/.ssh.nsot-admin.pub" #"${file("${var.PATH_TO_PUBLIC_KEY}")}"
 }
