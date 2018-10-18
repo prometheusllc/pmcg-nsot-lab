@@ -9,16 +9,6 @@ resource "aws_vpc" "mod" {
     propagate_at_launch = true
   }
   tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
-  tags {
     key                 = "t_responsible_individuals"
     value               = "${var.responsible-group-email}"
     propagate_at_launch = true
@@ -77,21 +67,6 @@ tags {
     propagate_at_launch = true
   }
   tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_responsible_individuals"
-    value               = "${var.responsible-group-email}"
-    propagate_at_launch = true
-  }
-  tags {
     key                 = "t_role"
     value               = "used for public facing Bastion Host, NGWs, and ELB"
     propagate_at_launch = true
@@ -109,16 +84,7 @@ resource "aws_route_table" "private" {
     value               = "NSOT-${var.environment}-Private-RT1"
     propagate_at_launch = true
   }
-  tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
+  
   tags {
     key                 = "t_responsible_individuals"
     value               = "${var.responsible-group-email}"
@@ -142,16 +108,7 @@ resource "aws_route_table" "private2" {
     value               = "NSOT-${var.environment}-Private-RT2"
     propagate_at_launch = true
   }
-  tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
+  
   tags {
     key                 = "t_responsible_individuals"
     value               = "${var.responsible-group-email}"
@@ -185,16 +142,7 @@ resource "aws_subnet" "public" {
     value               = "NSOT-${var.environment}-${var.azone}-PublicSubnet1"
     propagate_at_launch = true
   }
-  tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
+  
   tags {
     key                 = "t_responsible_individuals"
     value               = "${var.responsible-group-email}"
@@ -222,16 +170,7 @@ resource "aws_subnet" "public2" {
     value               = "NSOT-${var.environment}-${var.azone}-PublicSubnet2"
     propagate_at_launch = true
   }
-  tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
+  
   tags {
     key                 = "t_responsible_individuals"
     value               = "${var.responsible-group-email}"
@@ -258,16 +197,7 @@ resource "aws_subnet" "private" {
     value               = "NSOT-${var.environment}-${var.azone}-PrivateSubnet1"
     propagate_at_launch = true
   }
-  tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
+  
   tags {
     key                 = "t_responsible_individuals"
     value               = "${var.responsible-group-email}"
@@ -295,16 +225,7 @@ resource "aws_subnet" "private2" {
     value               = "NSOT-${var.environment}-${var.azone}-PrivateSubnet2"
     propagate_at_launch = true
   }
-  tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
+ 
   tags {
     key                 = "t_responsible_individuals"
     value               = "${var.responsible-group-email}"
