@@ -2,7 +2,7 @@ resource "random_id" "sshkey2" {
   byte_length = 8
 }
 
-resource "aws_security_group" "cosmos-NSOT_ELB" {
+resource "aws_security_group" "NSOT_ELB" {
     name = "nsot-sg-${random_id.sshkey2.hex}"
     description = "Allow incoming traffic"
 
