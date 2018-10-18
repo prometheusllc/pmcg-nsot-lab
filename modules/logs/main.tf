@@ -9,7 +9,7 @@ resource "aws_flow_log" "vpc" {
 
 
 resource "aws_cloudwatch_log_group" "vpc-flowlog-group" {
-  name = "/cosmosnsot-${var.environment}/${var.vpc_id}/flowlog"
+  name = "/nsot-${var.environment}/${var.vpc_id}/flowlog"
   retention_in_days = "${var.flow_log_retention_in_days}"
 }
 
