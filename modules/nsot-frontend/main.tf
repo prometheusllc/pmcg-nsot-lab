@@ -18,7 +18,7 @@ resource "random_id" "sshkey" {
 }
 
 resource "aws_security_group" "cosmos-NSOT_region1" {
-    #name = "cosmos-nsot-sg-${random_id.sshkey.hex}"
+    #name = "nsot-sg-${random_id.sshkey.hex}"
     description = "Allow incoming traffic"
 
     ingress {
@@ -72,7 +72,7 @@ resource "aws_security_group" "cosmos-NSOT_region1" {
     
 }
 resource "aws_key_pair" "cosmos-admin" {
-  key_name = "cosmos-admin-${random_id.sshkey.hex}"
+  key_name = "nsot-admin-${random_id.sshkey.hex}"
   public_key = "${file("${var.PATH_TO_PUBLIC_KEY}")}"
 }
 
