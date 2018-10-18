@@ -17,7 +17,7 @@ module "vpc" {
 module "logs" {
   source = "./modules/logs"
   vpc_id =  "${module.vpc.vpc_id}"
-  environment  = "cosmos-nsot-prod"
+  environment  = "nsot test"
   flow_log_retention_in_days = "5"
 }
 
