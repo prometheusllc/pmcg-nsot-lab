@@ -27,7 +27,7 @@ runcmd:
   - export LOCAL_IP="$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')"
   - echo "$RDS_PORT $LOCAL_IP" >> test
   - cd /home/ubuntu
-  - git clone https://github.com/jgearheart/Docker-NSOT-Mysql.git
+  - git clone https://github.com/prometheusllc/Docker-NSOT-Mysql.git
   - cd /home/ubuntu/Docker-NSOT-Mysql
   - docker build -t nsot:master .
   - docker run -itd --restart always --privileged --name nsot --net host -e RDS_NAME=$RDS_NAME \ 
