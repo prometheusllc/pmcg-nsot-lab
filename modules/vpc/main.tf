@@ -33,16 +33,6 @@ resource "aws_internet_gateway" "mod" {
     propagate_at_launch = true
   }
   tags {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tags {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
-  tags {
     key                 = "t_responsible_individuals"
     value               = "${var.responsible-group-email}"
     propagate_at_launch = true
