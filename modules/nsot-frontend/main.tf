@@ -118,26 +118,7 @@ resource "aws_autoscaling_group" "nsot" {
     value               = "NSOT-Frontend-App-Server"
     propagate_at_launch = true
   }
-  tag {
-    key                 = "t_cost_centre"
-    value               = "${var.cost_centre}"
-    propagate_at_launch = true
-  }
-  tag {
-    key                 = "t_owner_individual"
-    value               = "${var.owner_individual}"
-    propagate_at_launch = true
-  }
-  tag {
-    key                 = "t_responsible_individuals"
-    value               = "${var.responsible-group-email}"
-    propagate_at_launch = true
-  }
-  tag {
-    key                 = "t_role"
-    value               = "${var.role}"
-    propagate_at_launch = true
-  }
+  
   tag {
     key                 = "t_environment"
     value               = "${var.environment}"
