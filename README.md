@@ -1,6 +1,6 @@
-# cosmos-terraform-NSOT
+# prometheusllc-terraform-NSOT
 
-The Cosmos Terraform NSOT template will build out a higly available, dedicated NSOT environment including:
+The Prometheus-LLC Terraform NSOT template will build out a higly available, dedicated NSOT environment including:
 <br /> i. Dedicated NSOT VPC within the region you specify
 <br /> ii. public subnets/routing tables for DMZ access to environment via a public facing bastion/management host as well as NGWs for                private subnet internet access.
 <br />iii. private routing table/subnets for isolated backend app servers only accessible via the management/bastion host and through the            ELBs for the WebUI.
@@ -17,4 +17,4 @@ The Cosmos Terraform NSOT template will build out a higly available, dedicated N
 <br /> 3. Once the environment is built, SSH in to the bastion host and then jump from there via ssh to one of the NSOT APP frontend                 servers and run the following command to create a super user account which you will use to login to the NSOT webui in the next s           tep: sudo docker exec -it nsot /bin/bash
 <br />         sudo nsot-server createsuperuser
 <br />
-<br />   Once complete, open a browser and go to http://<dns name you specified for the DNS var in the NSOT module>.shared.prsn-dev.io.            This will take you to the NSOT webui where you can log in w/ your NSOT username/password set in the previous step.
+
